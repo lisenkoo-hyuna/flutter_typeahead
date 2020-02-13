@@ -910,6 +910,7 @@ class _TypeAheadFieldState<T> extends State<TypeAheadField<T>>
         style: widget.textFieldConfiguration.style,
         textAlign: widget.textFieldConfiguration.textAlign,
         enabled: widget.textFieldConfiguration.enabled,
+        readOnly: widget.textFieldConfiguration.readOnly,
         keyboardType: widget.textFieldConfiguration.keyboardType,
         autofocus: widget.textFieldConfiguration.autofocus,
         inputFormatters: widget.textFieldConfiguration.inputFormatters,
@@ -1337,6 +1338,13 @@ class TextFieldConfiguration<T> {
   /// Same as [TextField.enabled](https://docs.flutter.io/flutter/material/TextField/enabled.html)
   final bool enabled;
 
+  /// Whether the text can be changed. 
+  /// When this is set to true, the text cannot be modified by any shortcut or keyboard operation. The text is still selectable.
+  /// Defaults to false. Must not be null.
+  /// 
+  /// Same as [TextField.readOnly](https://docs.flutter.io/flutter/material/TextField/readOnly.html)
+  final bool readOnly;
+
   /// The type of keyboard to use for editing the text.
   ///
   /// Same as [TextField.keyboardType](https://docs.flutter.io/flutter/material/TextField/keyboardType.html)
@@ -1460,6 +1468,7 @@ class TextFieldConfiguration<T> {
     this.autofocus: false,
     this.keyboardType: TextInputType.text,
     this.enabled: true,
+    this.readOnly: false,
     this.textAlign: TextAlign.start,
     this.focusNode,
     this.cursorColor,
@@ -1493,6 +1502,7 @@ class TextFieldConfiguration<T> {
       bool autofocus,
       TextInputType keyboardType,
       bool enabled,
+      bool readOnly,
       TextAlign textAlign,
       FocusNode focusNode,
       Color cursorColor,
@@ -1522,6 +1532,7 @@ class TextFieldConfiguration<T> {
       autofocus: autofocus ?? this.autofocus,
       keyboardType: keyboardType ?? this.keyboardType,
       enabled: enabled ?? this.enabled,
+      readOnly: readOnly ?? this.readOnly,
       textAlign: textAlign ?? this.textAlign,
       focusNode: focusNode ?? this.focusNode,
       cursorColor: cursorColor ?? this.cursorColor,
