@@ -744,6 +744,7 @@ class _CupertinoTypeAheadFieldState<T> extends State<CupertinoTypeAheadField<T>>
         onSubmitted: widget.textFieldConfiguration.onSubmitted,
         inputFormatters: widget.textFieldConfiguration.inputFormatters,
         enabled: widget.textFieldConfiguration.enabled,
+        readOnly: widget.textFieldConfiguration.readOnly,
         cursorWidth: widget.textFieldConfiguration.cursorWidth,
         cursorRadius: widget.textFieldConfiguration.cursorRadius,
         cursorColor: widget.textFieldConfiguration.cursorColor,
@@ -1147,6 +1148,7 @@ class CupertinoTextFieldConfiguration<T> {
   final ValueChanged<String> onSubmitted;
   final List<TextInputFormatter> inputFormatters;
   final bool enabled;
+  final bool readOnly;
   final double cursorWidth;
   final Radius cursorRadius;
   final Color cursorColor;
@@ -1184,6 +1186,7 @@ class CupertinoTextFieldConfiguration<T> {
     this.onSubmitted,
     this.inputFormatters,
     this.enabled,
+    this.readOnly,
     this.cursorWidth = 2.0,
     this.cursorRadius = const Radius.circular(2.0),
     this.cursorColor,
@@ -1222,6 +1225,7 @@ class CupertinoTextFieldConfiguration<T> {
     ValueChanged<String> onSubmitted,
     List<TextInputFormatter> inputFormatters,
     bool enabled,
+    bool readOnly,
     double cursorWidth,
     Radius cursorRadius,
     Color cursorColor,
@@ -1258,6 +1262,7 @@ class CupertinoTextFieldConfiguration<T> {
       onSubmitted: onSubmitted ?? this.onSubmitted,
       inputFormatters: inputFormatters ?? this.inputFormatters,
       enabled: enabled ?? this.enabled,
+      readOnly: readOnly ?? this.readOnly,
       cursorWidth: cursorWidth ?? this.cursorWidth,
       cursorRadius: cursorRadius ?? this.cursorRadius,
       cursorColor: cursorColor ?? this.cursorColor,
